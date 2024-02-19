@@ -1,6 +1,6 @@
 import "./widget.css";
 import { basicSetup, EditorView } from 'codemirror'
-import { javascript } from '@codemirror/language'
+import { javascript } from '@codemirror/lang-javascript'
 
 function render({ model, el }) {
 	/* let btn = document.createElement("button");
@@ -16,12 +16,13 @@ function render({ model, el }) {
 	el.appendChild(btn); */
 
     let textarea = document.createElement("div");
-    const initialText = 'console.log("hello, world")'
+    const initialText = 'console.log("hello, world!")'
 
     let cm = new EditorView({
         doc: initialText,
         extensions: [
             basicSetup,
+            javascript(),
         ],
         parent: textarea,
     });
