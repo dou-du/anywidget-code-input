@@ -27,6 +27,9 @@ function render({ model, el }) {
         parent: textarea,
     });
 
+    model.set("value", initialText);
+    model.save_changes();
+
 	el.appendChild(textarea);
 }
 
